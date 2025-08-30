@@ -1,4 +1,3 @@
-// pom/header.assertions.ts
 import { Page, Locator } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { headerSelectors } from './header.selectors';

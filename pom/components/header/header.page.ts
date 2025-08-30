@@ -1,4 +1,3 @@
-// pom/Header.page.ts (Refactored)
 import { Page } from '@playwright/test';
 import { HeaderAssertions } from './header.assertions';
 
