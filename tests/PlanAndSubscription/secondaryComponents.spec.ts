@@ -19,23 +19,25 @@ const productNames = [
     ProductName.CLION,
     ProductName.RUSTROVER
 ];
+test.describe('Secondary Components Check on the Page', () => {
+    /** The test is parametrized with values [INTELLIJ, CLION, RUSTROVER] */
+    productNames.forEach(productName => {
+        test(`Buy Page: ${productName} secondary components verification`, async ({ header, buyProductPage }) => {
+            allure.suite(testSuiteName);
+            await allure.description(scenarioDescription);        
+            await buyProductPage.navigateToProduct(productName);
 
-productNames.forEach(productName => {
-    test(`Buy Page: ${productName} secondary components verification`, async ({ header, buyProductPage }) => {
-        allure.suite(testSuiteName);
-        await allure.description(scenarioDescription);        
-        await buyProductPage.navigateToProduct(productName);
-
-        await allure.step("Verify header components", async () => {
-            await header.assert.headerIsDisplayed();
-            await header.assert.jetbrainsLogoIsDisplayed();
-            await header.assert.productTitleText(productName);
-            await header.assert.idesTagIsDisplayed();
-            await header.assert.mainMenuIsDisplayed();
-            await header.assert.menuItemsAreDisplayed();
-            // TBD { assert 'pricing' and 'download' elements on header }
+            await allure.step("Verify header components", async () => {
+                await header.assert.headerIsDisplayed();
+                await header.assert.jetbrainsLogoIsDisplayed();
+                await header.assert.productTitleText(productName);
+                await header.assert.idesTagIsDisplayed();
+                await header.assert.mainMenuIsDisplayed();
+                await header.assert.menuItemsAreDisplayed();
+                // TBD { assert 'pricing' and 'download' elements on header }
+            });
+            // TBD { assert other componets presence on page (e.g. FAQ, Contact Us) }
+            // TBD { assert footer }
         });
-        // TBD { assert other componets presence on page (e.g. FAQ, Contact Us) }
-        // TBD { assert footer }
     });
 });

@@ -17,9 +17,9 @@ export default defineConfig({
     [
       "allure-playwright", 
       {
-        detail: false,
+        detail: true,
         outputFolder: "allure-results",
-        suiteTitle: false,
+        suiteTitle: true,
       }
     ]
   ],
@@ -33,17 +33,18 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'UI-Tests-Chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
+    //*
+    {
+      name: 'UI-Tests-Firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'UI-Tests-Webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
+    //*/
   ],
 });
