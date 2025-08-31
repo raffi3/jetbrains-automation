@@ -2,7 +2,6 @@
 import { type Page, type Locator } from '@playwright/test';
 import { buySelectors } from './buyProduct.selectors';
 import { BaseAssertions } from '../../../helpers/BaseAssertions';
-import { ProductCardAssertions } from '../../components/product-card/ProductCard.assertions';
 import { allure } from 'allure-playwright';
 
 export class BuyPageAssertions {

@@ -22,8 +22,8 @@ test.describe('Main Product Card Scenarios', () => {
     /** The test is parametrized with combinations e.g. { CLion, Organization, Yearly }
      * or {IntelliJ, Individual, Monthly}, etc. */
     testCombinationsBuyProduct.forEach(scenario => {
-        test(`Buy Page: ${scenario.productName}-${scenario.userType}-${scenario.billingCycle} the main product card components and prices verification`, 
-            async ({ buyProductPage }) => {
+        const combinationName = `${scenario.productName}-${scenario.userType}-${scenario.billingCycle}`;
+        test(`Buy Page: ${combinationName} the main product card components and prices verification`, async ({ buyProductPage }) => {
             allure.suite(testSuiteName);
             await allure.description(scenarioDescription);        
             await buyProductPage.navigateToProduct(scenario.productName);
@@ -39,7 +39,7 @@ test.describe('Main Product Card Scenarios', () => {
                 scenario.billingCycle
             );
             const productCard = buyProductPage.productCard(sku);
-            const productPriceApi = await DataProvider.getProductPriceFromMockApi(scenario.productName, scenario.userType, scenario.billingCycle)
+            const productPriceApi = await DataProvider.getProductPriceFromMockApi(scenario.productName, scenario.userType, scenario.billingCycle);
 
             await allure.step("Verify the main product card components & price", async () => {
                 await productCard.assert.title(scenario.productName);
@@ -49,7 +49,7 @@ test.describe('Main Product Card Scenarios', () => {
 
                 // Assert price main (vs Source of Truth)
                 const productPriceUi = await productCard.getPrimaryPrice();
-                BaseAssertions.softEqual(productPriceUi, productPriceApi.value, `Product price SoT(api) vs UI (sku: ${sku})`)
+                BaseAssertions.softEqual(productPriceUi, productPriceApi.value, `Product price SoT(api) vs UI (sku: ${sku})`);
             });
 
             await allure.step("Verify the product card with supercharge option & supercharge components", async () => {

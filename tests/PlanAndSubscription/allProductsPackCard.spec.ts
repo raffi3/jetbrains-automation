@@ -19,8 +19,8 @@ test.describe('All Products Pack Card Scenarios', () => {
     /** The test is parametrized with combinations e.g. { CLion, Organization, Yearly }
      * or {IntelliJ, Individual, Monthly}, etc. */
     testCombinationsBuyProduct.forEach(scenario => {
-        test(`Buy Page: ${scenario.productName}-${scenario.userType}-${scenario.billingCycle} all-products-pack components and prices verification`, 
-            async ({ buyProductPage }) => {
+        const combinationName = `${scenario.productName}-${scenario.userType}-${scenario.billingCycle}`;
+        test(`Buy Page: ${combinationName} all-products-pack components and prices verification`, async ({ buyProductPage }) => {
                 allure.suite(testSuiteName);
                 await allure.description(scenarioDescription);        
                 await buyProductPage.navigateToProduct(scenario.productName);

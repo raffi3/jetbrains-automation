@@ -1,0 +1,5 @@
+pom/CheckoutPage.ts
+pom/components/adyen/
+pom/EStoreIdentificationPage.ts
+decorators/allure.decorator.ts
+experimental/

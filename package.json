@@ -3,18 +3,28 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test --project='UI-Tests-Chromium'",
+    "test:headed": "playwright test --headed --project='UI-Tests-Chromium'",
+    "report": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "lint": "eslint . --ext .ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.54.1",
     "@types/node": "^24.0.14",
-    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.7.3",
     "allure-commandline": "^2.34.1",
     "allure-playwright": "^2.15.1",
-    "eslint": "^8.50.0"
+    "eslint": "^8.57.1",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.6.0",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",

@@ -36,7 +36,7 @@ export default defineConfig({
       name: 'UI-Tests-Chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-    //*
+    /*
     {
       name: 'UI-Tests-Firefox',
       use: { ...devices['Desktop Firefox'] },
@@ -45,6 +45,6 @@ export default defineConfig({
       name: 'UI-Tests-Webkit',
       use: { ...devices['Desktop Safari'] },
     },
-    //*/
+    */
   ],
 });

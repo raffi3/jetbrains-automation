@@ -8,7 +8,10 @@ export class BaseAssertions {
         expect.soft(actual, contextMsg).toEqual(expected); 
     }
 
-    public static softAssertToContain(actual: string|number|Array<string|number>, subString: string|number, contextMsg: string) {
+    public static softAssertToContain(
+        actual: string|number|Array<string|number>, 
+        subString: string|number, contextMsg: string
+    ) {
         allure.logStep(`BaseAssertions: softAssertToContain(expected: ${subString}, actual: ${actual}).`);
         expect.soft(actual, `${contextMsg}: "${subString}" to be part of "${actual}".`).toContain(subString);
     }
@@ -35,9 +38,14 @@ export class BaseAssertions {
         await expect.soft(locator, `${elementDescr} to be visible on page.`).toBeVisible();
     }
 
-    public static async softAssertElementAttributeToContain(element: Locator, attribute: string, expectedText: string|number, elementName: string) {
+    public static async softAssertElementAttributeToContain(
+        element: Locator, 
+        attribute: string, 
+        expectedText: string|number, 
+        elementName: string
+    ) {
         allure.logStep(`BaseAssertions: softAssertElementAttributeToContain()`);
-        const elementAttribute =  await element.getAttribute(attribute)
+        const elementAttribute =  await element.getAttribute(attribute);
         if (elementAttribute) {
             this.softAssertToContain(elementAttribute, expectedText, elementName);
         } else {

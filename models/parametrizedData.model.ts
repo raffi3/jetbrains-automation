@@ -8,4 +8,4 @@ export interface DataCombinationsBuyProduct {
     userType: UserType;
     billingCycle: BillingCycle;
     paymentMethod?: PaymentMethod;
-};
+}
