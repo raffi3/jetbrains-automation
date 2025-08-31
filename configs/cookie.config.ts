@@ -1,0 +1,5 @@
+export const JETBRAINS_CONSENT_COOKIE = {
+    name: "cookiehub",
+    value: "eyJhbnN3ZXJlZCI6dHJ1ZSwicmV2aXNpb24iOjMsImRudCI6ZmFsc2UsImFsbG93U2FsZSI6dHJ1ZSwiaW1wbGljdCI6dHJ1ZSwicmVnaW9uIjoiRzAiLCJ0b2tlbiI6Im5GS2t3SXVRZ2RqSWozOUVONXgwVWZLbFhmY2FoYUhkcTJJZ0c1bWhHVm9WUTNFenFaZ003SEJjc1FjWTE1Q2ciLCJ0aW1lc3RhbXAiOiIyMDI1LTA3LTE5VDA1OjQ0OjUzLjQxNFoiLCJhbGxBbGxvd2VkIjp0cnVlLCJjYXRlZ29yaWVzIjpbXSwidmVuZG9ycyI6W10sInNlcnZpY2VzIjpbXSwiaW1wbGljaXQiOmZhbHNlfQ==",
+    url: "https://www.jetbrains.com/"
+};
