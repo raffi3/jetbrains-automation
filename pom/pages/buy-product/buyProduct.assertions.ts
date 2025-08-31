@@ -1,4 +1,3 @@
-// Replaces original buyProduct.assertions.ts
 import { type Page, type Locator } from '@playwright/test';
 import { buySelectors } from './buyProduct.selectors';
 import { BaseAssertions } from '../../../helpers/BaseAssertions';
@@ -10,7 +9,7 @@ export class BuyPageAssertions {
     
     constructor(page: Page) {
         this.page = page;
-        this.pageTitile = page.locator(buySelectors.pageTitile);
+        this.pageTitile = page.locator(buySelectors.pageTitle);
     }
 
     public async pageTitle(): Promise<void> {

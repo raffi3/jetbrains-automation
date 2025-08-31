@@ -21,7 +21,7 @@ type ProductData = {
 };
 
 const productPriceDataMock: ProductData = {
-    'Intellij': {
+    [ProductName.INTELLIJ]: {
         Organization: {
             Yearly: { price: { currency: 'USD', value: 599.00 } },
             Monthly: { price: { currency: 'USD', value: 59.90 } },
@@ -31,7 +31,7 @@ const productPriceDataMock: ProductData = {
             Monthly: { price: { currency: 'USD', value: 16.90 } },
         },
     },
-    'CLion': {
+    [ProductName.CLION]: {
         Organization: {
             Yearly: { price: { currency: 'USD', value: 229.00 } },
             Monthly: { price: { currency: 'USD', value: 22.90 } },
@@ -41,7 +41,7 @@ const productPriceDataMock: ProductData = {
             Monthly: { price: { currency: 'USD', value: 9.90 } },
         },
     },
-    'RustRover': {
+    [ProductName.RUSTROVER]: {
         Organization: {
             Yearly: { price: { currency: 'USD', value: 229.00 } },
             Monthly: { price: { currency: 'USD', value: 22.90 } },
@@ -51,7 +51,7 @@ const productPriceDataMock: ProductData = {
             Monthly: { price: { currency: 'USD', value: 6.90 } },
         },
     },
-    'All': {
+    [ProductName.ALL_PRODUCTS]: {
         Organization: {
             Yearly: { price: { currency: 'USD', value:  779.00 } },
             Monthly: { price: { currency: 'USD', value: 77.90 } },
@@ -61,7 +61,7 @@ const productPriceDataMock: ProductData = {
             Monthly: { price: { currency: 'USD', value: 28.90 } },
         },
     },
-    'AiPro': {
+    [ProductName.AI_PRO]: {
         Organization: {
             Yearly: { price: { currency: 'USD', value: 200.00 } },
             Monthly: { price: { currency: 'USD', value: 20.00 } },

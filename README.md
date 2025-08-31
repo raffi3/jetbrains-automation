@@ -2,11 +2,11 @@
 ### Clone repository
 `git clone git@github.com:raffi3/jetbrains-automation.git`
 
-### Install Playwright
-`npm init playwright@latest`
-
 ### Install dependencies
 `npm install`
+
+### Install Playwright
+`npx playwright install --with-deps`
 
 ## Add .env
 `cp .env.example .env`

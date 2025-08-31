@@ -2,7 +2,7 @@ import { Locator } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { cardSelectors } from './productCard.selectors';
 import { DataConverter } from '../../../helpers/DataConverter';
-import { ProductCardAssertions } from './ProductCard.assertions';
+import { ProductCardAssertions } from './productCard.assertions';
 
 export class ProductCard {
     private readonly cardLocator: Locator;

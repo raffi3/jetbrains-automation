@@ -6,7 +6,7 @@ import { cardSelectors } from "../../components/product-card/productCard.selecto
  * to avoid both long selector and relying on element text, as well as to have localization support
 */
 export const buySelectors = {
-    pageTitile: 'h1',
+    pageTitle: 'h1',
 
     // User and billing cycle selectors
     measureSwitcherOption: 'span[class*="measureSwitcher"] button[data-rs-internal="switcher__option"]',

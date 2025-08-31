@@ -23,13 +23,13 @@ export class BaseAssertions {
     }
 
     public static softAssertToBeGreaterThan(actual: number, expected: number, contextMsg: string) {
-        allure.logStep(`BaseAssertions: softAssertToBeGreaterThan(expected: ${expect}, actual: ${actual})`);
+        allure.logStep(`BaseAssertions: softAssertToBeGreaterThan(expected: ${expected}, actual: ${actual})`);
         expect.soft(actual, contextMsg).toBeGreaterThan(expected);
     }
 
     public static assertValueIsNumeric(value: unknown, contextMsg: string) {
         allure.logStep(`BaseAssertions: assertValueIsNumeric()`);
-        expect(value, contextMsg).toEqual(expect.any(Number));
+        expect.soft(typeof value, contextMsg).toBe("number");
     }
     
     // Element Assertions

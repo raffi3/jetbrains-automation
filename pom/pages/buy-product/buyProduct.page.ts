@@ -1,7 +1,6 @@
-// Refactored file: buyProduct.page.ts
 import { Page, Locator } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { ProductCard } from '../../components/product-card/ProductCard.page';
+import { ProductCard } from '../../components/product-card/productCard.page';
 import { buySelectors } from './buyProduct.selectors';
 import { ProductName } from '../../../enums/product.enum';
 import { UserType } from '../../../enums/user.enum';

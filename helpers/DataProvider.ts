@@ -95,9 +95,19 @@ export class DataProvider {
         userType: UserType,
         billingCycle: BillingCycle
     ): Promise<PriceInfo> {
-        return await allure.step("Fetch API to getProductPrice based on paremeters", async () => {
-            const productPricesMock = await fetchProductPricesMock(); // Mock API imitation returning product prices
-            return productPricesMock[productName][userType][billingCycle].price;
+        return await allure.step("Fetch mock API to get product price based on parameters", async () => {
+            const pricesData = await fetchProductPricesMock(); // Mock API imitation returning product prices
+            const pricesForProduct = pricesData[productName];
+            if (!pricesForProduct) throw new Error(`No prices found for product "${productName}" in mock dataset.`);
+            
+            const pricesForUserType = pricesForProduct[userType];
+            if (!pricesForUserType) throw new Error(`No prices found for user type "${userType}" under product "${productName}".`);
+            
+            const priceForBillCycle = pricesForUserType[billingCycle];
+            if (!priceForBillCycle) throw new Error(
+                `No prices found for billing cycle "${billingCycle}" under product "${productName}" and user type "${userType}".`
+            );
+            return priceForBillCycle.price;
         });
     }
 }
